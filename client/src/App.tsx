@@ -3,7 +3,7 @@ import "./App.css";
 import axios from "axios";
 
 function App() {
-  const price = 10;
+  const amount = 10;
   const [phone, setPhone] = useState("");
 
   const submitPayment = (event: React.FormEvent<HTMLButtonElement>) => {
@@ -11,7 +11,7 @@ function App() {
     event.preventDefault();
     axios
       .post("http://localhost:3030/token", {
-        price,
+        amount,
         phone,
       })
       .then((res) => {
@@ -37,7 +37,7 @@ function App() {
         <img src="/t-shirt.jpeg" width="300" height="200" />
         <h1 className="text-2xl font-semibold">Black T-shirt </h1>
         <h2 className="mt-3  text-3 text-xl font-sans hover:font-semibold">
-          Price: Ksh {price}{" "}
+          Price: Ksh {amount}{" "}
         </h2>
         <p className=" mt-3 text-lg">
           Pay with <span className="text-green-600 font-bold">M-pesa</span>
