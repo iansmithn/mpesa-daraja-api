@@ -10,6 +10,8 @@ app.listen(port, () => {
   console.log("server is running on port", port);
 });
 
+app.use(express.json());
+app.use(cors());
 app.get("/", (req, res) => {
   res.send("Mpesa program running");
 });
